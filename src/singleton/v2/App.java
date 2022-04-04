@@ -1,7 +1,4 @@
-package singleton;
-
-import singleton.v2.Setting3;
-import singleton.v2.Setting4;
+package singleton.v2;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
