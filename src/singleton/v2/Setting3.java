@@ -1,9 +1,11 @@
 package singleton.v2;
 
+import java.io.Serializable;
+
 /**
  * double checked locking 사용하기 - 필요할 때 초기화(lazy)
  */
-public class Setting3 {
+public class Setting3 implements Serializable {
 
     private static volatile Setting3 instance;
 
@@ -18,5 +20,10 @@ public class Setting3 {
             }
         }
         return instance;
+    }
+
+    // 역직렬화 대응 방안
+    protected Object readResolve() {// 역직렬화시, 이 함수 사용함
+        return getInstance();
     }
 }
