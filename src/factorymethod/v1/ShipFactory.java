@@ -12,7 +12,7 @@ public interface ShipFactory {
 
     Ship createShip();// 추상 메서드
 
-    private void validate(String name, String email) {
+    private void validate(String name, String email) { //java11~
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("배 이름을 지어주세요.");
         }
